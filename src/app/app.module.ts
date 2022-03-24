@@ -23,8 +23,8 @@ import { UserInforComponent } from './form-login/user-infor/user-infor.component
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
-  { path: 'register', component: RegisterComponent, data: {title: 'Register'}},
   { path: 'login', component: LoginComponent, data: {title: 'Login'}},
+  { path: 'register', component: RegisterComponent, data: {title: 'Register'}},
 ];
 
 @NgModule({

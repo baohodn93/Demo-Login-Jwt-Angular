@@ -5,11 +5,18 @@
 </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-            <!-- <a class="nav-item nav-link active" routerLink="font-size">Font-Size <span class="sr-only">(current)</span></a> -->
-            <a *ngIf="!checkLogin" class="nav-item nav-link " routerLink="login ">Login</a>
-            <a *ngIf="!checkLogin " class="nav-item nav-link " routerLink="register ">Register</a>
-            <a *ngIf="checkLogin " class="nav-item nav-link " routerLink="#">{{name}}
-            <mat-icon color="ancent" matSuffix>sentiment_very_satisfied</mat-icon></a>
+
+            <a *ngIf="!checkLogin" class="nav-item nav-link active" routerLink="login">Login</a>
+            <a *ngIf="!checkLogin" class="nav-item nav-link active" routerLink="register">Register</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{name}}
+              </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Profile</a>
+                    <a class="dropdown-item" href="#">Logout</a>
+                </div>
+            </li>
         </div>
     </div>
 </nav>

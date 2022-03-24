@@ -3,10 +3,11 @@
         <div class="col-12" style="margin-top: 20px">
             <mat-card style="margin: 50px 0;">
                 <form class="form-register" #f="ngForm" (ngSubmit)="f.form.valid&&ngSubmit()" novalidate>
-                    <mat-error class="alert alert-primary">{{status}}</mat-error>
+                    <mat-error *ngIf="!isCreateFailed" class="alert alert-primary">{{status}}</mat-error>
+                    <mat-error *ngIf="f.submitted&&isCreateFailed" class="alert alert-danger">{{status}}</mat-error>
                     <mat-form-field style="width: 350px" appearance="outline">
                         <mat-label>Name</mat-label>
-                        <input name="name" matInput placeholder="Placeholder" [(ngModel)]="form.name" #name="ngModel" required minlength="6" maxlength="10">
+                        <input name="name" matInput placeholder="Placeholder" [(ngModel)]="form.name" #name="ngModel" required minlength="6" maxlength="20">
                         <mat-error *ngIf="name.hasError('required')">The name is required!</mat-error>
                         <mat-error *ngIf="name.hasError('minlength')">The name must more than 3 charater</mat-error>
                         <mat-error *ngIf="name.hasError('maxlength')">The name max 10 charater</mat-error>
