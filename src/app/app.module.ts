@@ -8,6 +8,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { HttpClientModule } from '@angular/common/http';
+import {httpInterceptorProviders} from './services/auth.interceptor';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
   { path: 'login', component: LoginComponent, data: {title: 'Login'}},
   { path: 'register', component: RegisterComponent, data: {title: 'Register'}},
+  { path: 'change-profile', component: UserInforComponent, data: {title: 'Change-Profile'}},
 ];
 
 @NgModule({
@@ -53,7 +55,7 @@ const routes: Routes = [
     ReactiveFormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

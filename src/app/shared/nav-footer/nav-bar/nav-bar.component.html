@@ -8,13 +8,13 @@
 
             <a *ngIf="!checkLogin" class="nav-item nav-link active" routerLink="login">Login</a>
             <a *ngIf="!checkLogin" class="nav-item nav-link active" routerLink="register">Register</a>
-            <li class="nav-item dropdown">
+            <li *ngIf="checkLogin" class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{name}}
               </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                    <a class="dropdown-item" href="#">Profile</a>
-                    <a class="dropdown-item" href="#">Logout</a>
+                    <a class="dropdown-item" routerLink="change-profile">Profile</a>
+                    <a class="dropdown-item" (click)="ngLogout()">Logout</a>
                 </div>
             </li>
         </div>
