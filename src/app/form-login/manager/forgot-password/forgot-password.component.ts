@@ -5,12 +5,12 @@ import { PasswordReset } from 'src/app/models/PasswordReset';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-reset-password',
-  templateUrl: './reset-password.component.html',
-  styleUrls: ['./reset-password.component.css'],
+  selector: 'app-forgot-password',
+  templateUrl: './forgot-password.component.html',
+  styleUrls: ['./forgot-password.component.css']
 })
-export class ResetPasswordComponent implements OnInit {
-  status = 'Reset your password';
+export class ForgotPasswordComponent implements OnInit {
+status = 'Reset your password';
   form: any = {};
   passwordReset: PasswordReset;
   hide = true;
@@ -41,19 +41,21 @@ export class ResetPasswordComponent implements OnInit {
   ngOnInit(): void {}
 
   ngSubmit() {
-    // this.passwordReset = new PasswordReset(
-    // this.form.email
-    // );
-    // this._authService.passwordReset(this.passwordReset).subscribe(
-    //   (data) => {
-    //   console.log('data --->', data);
-    //   if (JSON.stringify(data) == JSON.stringify(this.error)) {
-    //     this.isSubmitFailed = false;
-    //     this.status = 'This Email does not exist! Please try again!';
-    //   }
-    //   if(JSON.stringify(data) == JSON.stringify(this.success)) {
-    //     this._router.navigate(['///']);
-    //   }
-    // });
+    this.passwordReset = new PasswordReset(
+    this.form.email
+    );
+    this._authService.forgotPassword(this.passwordReset).subscribe(
+      (data) => {
+      console.log('data --->', data);
+      if (JSON.stringify(data) == JSON.stringify(this.error)) {
+        this.isSubmitFailed = false;
+        this.status = 'This Email does not exist! Please try again!';
+      }
+      if(JSON.stringify(data) == JSON.stringify(this.success)) {
+        this.isSubmitIn = true;
+        this.status = 'We have sent a reset password link to your email. Please check';
+      }
+    });
   }
+
 }

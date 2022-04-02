@@ -19,7 +19,7 @@ export class AuthService {
   private API_SIGNIN = environment.API_LOCAL + 'signin';
   private API_CHANGE_PROFILE = environment.API_LOCAL + 'change-profile';
   private API_LIST_USER = environment.API_LOCAL + 'list-user';
-  private API_PASSWORD_RESET = environment.API_LOCAL + 'password-reset';
+  private API_PASSWORD_RESET = environment.API_LOCAL2 + 'forgot-password';
 
   constructor(private _httpClient: HttpClient) {}
 
@@ -45,8 +45,8 @@ export class AuthService {
     )
   }
 
-  //Password-Reset
-  passwordReset(info:any): Observable<JwtResponse>{
+  //forgot-password
+  forgotPassword(info:any): Observable<JwtResponse>{
     return this._httpClient.post<JwtResponse>(this.API_PASSWORD_RESET, info);
   }
 

@@ -21,7 +21,7 @@
                         <mat-error *ngIf="password.hasError('required')">Password is required</mat-error>
                         <mat-error *ngIf="password.hasError('minlength')">Password must more than 5 character</mat-error>
                     </mat-form-field><br>
-                    <a class="nav-item nav-link active" (click)="ngPasswordReset()" style="margin-left: 230px;">Forgot password?</a>
+                    <a class="nav-item nav-link active" (click)="ngForgotPassword()" style="margin-left: 230px;">Forgot password?</a>
                     <button mat-stroked-button color="accent" class="mat-button-toggle-group btn-outline-success">Login
                       <mat-icon color="accent" matSuffix>arrow_right_alt</mat-icon>
                   </button>

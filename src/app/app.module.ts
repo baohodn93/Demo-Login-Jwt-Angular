@@ -26,6 +26,7 @@ import { ChangePasswordComponent } from './form-login/manager/change-password/ch
 import { ChangeAvatarComponent } from './form-login/manager/change-avatar/change-avatar.component';
 import { ChangeRoleComponent } from './form-login/manager/change-role/change-role.component';
 import { ResetPasswordComponent } from './form-login/manager/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from './form-login/manager/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, data: { title: 'Home' } },
@@ -35,6 +36,7 @@ const routes: Routes = [
   { path: 'change-avatar', component: ChangeAvatarComponent, data: {title: 'Change-Avatar'}},
   { path: 'change-password', component: ChangePasswordComponent, data: {title: 'Change-Password'}},
   { path: 'change-role', component: ChangeRoleComponent, data: {title: 'Change-Role'}},
+  { path: 'forgot-password', component: ForgotPasswordComponent, data: {title: 'Forgot-Password'}},
   { path: 'password-reset', component: ResetPasswordComponent, data: {title: 'Password-Reset'}},
 ];
 
@@ -51,7 +53,8 @@ const routes: Routes = [
     ChangePasswordComponent,
     ChangeAvatarComponent,
     ChangeRoleComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

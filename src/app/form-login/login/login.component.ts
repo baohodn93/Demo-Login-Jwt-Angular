@@ -68,7 +68,7 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-  ngPasswordReset(){
-    this.router.navigate(['/password-reset']);
+  ngForgotPassword(){
+    this.router.navigate(['/forgot-password']);
   }
 }
