@@ -17,6 +17,7 @@
                     <a class="dropdown-item" (click)="ngLogout()">Logout</a>
                 </div>
             </li>
+            <a *ngIf="checkLogin&&checkRoleName" class="nav-item nav-link active" routerLink="change-role">Page Admin</a>
         </div>
     </div>
 </nav>

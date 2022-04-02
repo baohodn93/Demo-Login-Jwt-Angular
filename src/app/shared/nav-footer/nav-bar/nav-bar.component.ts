@@ -1,4 +1,4 @@
-import { Component, NgModule, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenService } from 'src/app/services/token.service';
@@ -11,6 +11,8 @@ import { TokenService } from 'src/app/services/token.service';
 export class NavBarComponent implements OnInit {
   name: string;
   checkLogin = false;
+  checkRoleName = false;
+  admin = ["ADMIN"];
 
   constructor(private tokenService: TokenService,
     private authService: AuthService,
@@ -20,6 +22,9 @@ export class NavBarComponent implements OnInit {
     if(this.tokenService.getToken()){
       this.checkLogin = true;
       this.name = this.tokenService.getName();
+    }
+    if(JSON.stringify(this.tokenService.getRoles())==JSON.stringify(this.admin)){
+      this.checkRoleName = true;
     }
   }
 

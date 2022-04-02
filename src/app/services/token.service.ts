@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 const TOKEN_KEY = 'Token_key';
 const NAME_KEY = 'Name_key';
 const ROLE_KEY = 'Role_key';
+
 @Injectable({
   providedIn: 'root',
 })
